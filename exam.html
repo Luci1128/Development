@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Pass Fail Predictor</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, hsl(0, 67%, 23%), #093f53);
+        }
+        div{
+            width: 500px;
+            height: 250px;
+            padding: 20px 30px;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        h1{
+            color: hwb(223 69% 1%);
+            margin-bottom: 20px;
+        }
+        input{
+            padding: 8px 12px;
+            width: 70%;
+            border-radius: 8px;
+            border: 0.5px solid #ffffff;
+            background-color: #f7f7f7;
+            color: #333333;
+            margin-right: 5px;
+        }
+        button{
+            padding: 9px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background-color: #ffb347; /* contrasting button color */
+            color: #1f1f1f;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: #ff9933;
+        }
+        #par{
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 18px;
+        }
+        #rpar{
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .distinction{
+            color: #00ff26;
+        }
+        .normal1{
+            color: #67c81d;
+        }
+        .normal2{
+            color: #8aff3c;
+        }
+        .normal3{
+            color: #af4646;
+        }
+        .fail{
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Exam Pass Fail Predictor</h1>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button onclick="exam()">SUBMIT</button>
+
+        <p id="par"></p>
+        <p id="rpar"></p>
+    </div>
+
+    <script>
+        function exam(){
+            var name = document.getElementById("name").value;
+            var marks = Math.random() * 101;
+            var par = document.getElementById("par");
+            var rpar = document.getElementById("rpar");
+
+            var roundedMarks = Math.floor(marks);
+            par.innerHTML = "The student " + name + " is going to score: " + roundedMarks + " marks";
+
+            rpar.classList.remove("distinction", "fail", "normal1","normal2","normal3");
+
+            if(roundedMarks >= 90){
+                rpar.innerHTML = "Distinction";
+                rpar.classList.add("distinction");
+            }else if(roundedMarks >= 75 && roundedMarks < 90){
+                rpar.innerHTML = "First class";
+                rpar.classList.add("normal1");
+            }else if(roundedMarks >= 50 && roundedMarks < 75){
+                rpar.innerHTML = "Second class";
+                rpar.classList.add("normal2");
+            }else if(roundedMarks >= 35 && roundedMarks < 50){
+                rpar.innerHTML = "Third class";
+                rpar.classList.add("normal3");
+            }else{
+                rpar.innerHTML = "Fail";
+                rpar.classList.add("fail");
+            }
+        }
+    </script>
+</body>
+</html>

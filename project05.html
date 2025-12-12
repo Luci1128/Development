@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="scene">
+        <div class="sun"></div>
+    </div>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: skyblue;
+        }
+        .scene{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(to top,skyblue,white);
+            overflow: hidden;
+            animation: skychange 8s infinite ease-in-out;
+        }
+        .sun{
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background: yellow;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            animation: sunrise 8s linear infinite;
+            position: absolute;
+            box-shadow: 1px 1px 1000px rgb(255, 202, 55);
+        }
+  
+    @keyframes sunrise{
+         0%{
+                top: 100%;
+                background: yellow;
+            }
+            40%{
+                top: 20%;
+                background: white;
+            }
+            70%{
+                top: 60%;
+                background: orange;
+            }
+            100%{
+                top: 100%;
+                background: red;
+            }
+    }
+    @keyframes skychange{
+            0%{
+               background: linear-gradient(to top,#ffa500,#8780);
+            }
+            40%{
+                background: linear-gradient(to top,skyblue,white);
+            }
+            70%{
+               background: linear-gradient(to top,orange,pink);
+            }
+            100%{
+                background: linear-gradient(to top,rgb(64, 64, 64),white);
+            }
+    }
+    </style>
+</body>
+</html>

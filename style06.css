@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(186, 221, 255);
+    padding: 20px;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.timetable{
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: lavenderblush;
+}
+.timetable th, .timetable td{
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center ;
+}
+/* .timetable td{
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+} */
+.break{
+    background-color: yellow;
+    font-weight: 900;
+ }
+ .lunch{
+    background-color: greenyellow;
+    font-weight: 900;
+ }
+ .one{
+    background-color: rgb(84, 72, 59);
+    color: white;
+ }
+ .two{
+    background-color: color-mix(in srgb, red 20%, green 40%);
+ }
+ .r{
+    background-color: blanchedalmond;
+ }
+ .b{
+    background-color: chocolate;
+ }

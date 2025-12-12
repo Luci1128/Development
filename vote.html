@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Validator</title>
+    <link rel="stylesheet" href="vote.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Vote validator</h1>
+        <h3>
+            <input type="text" name="uname" id="name" placeholder="Enter your name">
+        </h3>
+        <input type="number" name="uage" id="age" placeholder="Enter your age"><br>
+        <button onclick="vote()">SUBMIT</button>
+    </div>
+
+    <script>
+        function vote(){
+            var name = document.getElementById("name").value;
+            var ageValue = document.getElementById("age").value;
+            var age = parseInt(ageValue);
+
+            if(!ageValue || isNaN(age)){
+                alert("Invalid entry!");
+            }else if(age >= 18){
+                alert('Eligible to vote');
+            }else{
+                alert('You are minor.');
+            }
+        }
+    </script>
+</body>
+</html>
